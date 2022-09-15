@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import ProfilePic from "../../img/CoverArt/profilepic.webp";
-import MK from "../../img/CoverArt/Library/MarioKart.webp";
+import ProfilePic from "../../../img/CoverArt/profilepic.webp";
+import MK from "../../../img/CoverArt/Library/MarioKart.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faJ } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -12,7 +12,7 @@ import {
   faGithubSquare,
 } from "@fortawesome/free-brands-svg-icons";
 
-const ProfileContainer = () => {
+const Profile = () => {
   return (
     <ProfileContentContainerr
       initial={{ opacity: 0 }}
@@ -115,7 +115,7 @@ const ProfileContainer = () => {
     </ProfileContentContainerr>
   );
 };
-export default ProfileContainer;
+export default Profile;
 
 const ProfileContentContainerr = styled(motion.div)`
   width: 100%;

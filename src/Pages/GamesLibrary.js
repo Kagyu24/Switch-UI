@@ -1,9 +1,9 @@
 import React from "react";
 import "./globalstyle.css";
 import { motion } from "framer-motion";
-import { ControllerIcon } from "../components/Menu/ControllerIcon";
-import { SystemInfoMenu } from "../components/Menu/MenuSystemInfo";
-import { LibraryTitle } from "../components/GamesLibrary/LibraryTitle";
+import { ControllerIcon } from "../components/Menu/MenuComponents/ControllerIcon";
+import { SystemInfoMenu } from "../components/Menu/MenuComponents/MenuSystemInfo";
+import { LibraryTitle } from "../components/GamesLibrary/LibraryComponents/LibraryTitle";
 import { LibraryBox } from "../components/GamesLibrary/LibraryBox";
 import { Circles } from "../components/Circles";
 

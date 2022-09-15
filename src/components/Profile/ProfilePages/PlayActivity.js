@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import LinkTP from "../../img/CoverArt/linkTP.webp";
-import MK from "../../img/CoverArt/Library/MarioKart.webp";
-import ACNH from "../../img/CoverArt/AnimalCrossing.webp";
-import PM from "../../img/CoverArt/PaperMario.webp";
-import MH from "../../img/CoverArt/Library/MonsterHunterRise.webp";
-import BotW from "../../img/CoverArt/Library/Botw.webp";
+import LinkTP from "../../../img/CoverArt/linkTP.webp";
+import MK from "../../../img/CoverArt/Library/MarioKart.webp";
+import ACNH from "../../../img/CoverArt/AnimalCrossing.webp";
+import PM from "../../../img/CoverArt/PaperMario.webp";
+import MH from "../../../img/CoverArt/Library/MonsterHunterRise.webp";
+import BotW from "../../../img/CoverArt/Library/Botw.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle, faPencil } from "@fortawesome/free-solid-svg-icons";
 

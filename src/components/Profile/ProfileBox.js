@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import "./icons.css";
 import LinkTP from "../../img/CoverArt/linkTP.webp";
-import ProfileContainer from "./ProfileContainer";
-import { PlayActivity } from "./PlayActivity";
+import ProfileContainer from "./ProfilePages/Profile";
+import { PlayActivity } from "./ProfilePages/PlayActivity";
 import { Link } from "react-router-dom";
-import { ContactUs } from "./AddFriend";
+import { ContactUs } from "./ProfilePages/AddFriend";
 
 export const ProfileBox = () => {
   const [openProfile, setOpenProfile] = useState(false);
@@ -85,10 +85,6 @@ export const ProfileBox = () => {
     </div>
   );
 };
-
-const Linkstyle = styled(Link)`
-  color: rgba(255, 255, 255, 0.7);
-`;
 
 const Showcase = styled(motion.div)`
   width: 100%;
@@ -178,6 +174,7 @@ const Tabs = styled(motion.div)`
       border: 3px solid lightblue;
       padding: 22px;
       color: turquoise;
+      cursor: pointer;
     }
   }
 `;
@@ -190,6 +187,14 @@ const TabTextBorder = styled.h1`
       margin-left: -3%;
       margin-right: 3%;
     }
+  }
+`;
+
+const Linkstyle = styled(Link)`
+  color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  ${TabTextBorder}:hover & {
+    color: turquoise;
   }
 `;
 

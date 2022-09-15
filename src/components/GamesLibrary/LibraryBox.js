@@ -25,8 +25,8 @@ import { PokemonModal } from "../Modals/PokemonModal";
 import { KirbyModal } from "../Modals/KirbyModal";
 import { SmashModal } from "../Modals/SmashModal";
 import { MarioPartyModal } from "../Modals/MarioPartyModal";
-import { LibraryControlButtons } from "./LibraryControlButtons";
-import { LibraryControlButtonsTop } from "./LibraryControlButtonsTop";
+import { LibraryControlButtons } from "./LibraryComponents/LibraryControlButtons";
+import { LibraryControlButtonsTop } from "./LibraryComponents/LibraryControlButtonsTop";
 
 export const LibraryBox = () => {
   const [openMetroid, setOpenMetroid] = useState(false);
@@ -139,7 +139,6 @@ export const LibraryBox = () => {
             </GameTitle>
           </GameCard>
           <GameCard
-            
             whileHover={{
               borderColor: ["#078fde", "#8bdefc", "#078fde"],
               transition: {

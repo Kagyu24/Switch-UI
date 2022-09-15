@@ -59,7 +59,7 @@ export const ControllerIcon = () => {
           width="20"
           y="-1"
           x="72"
-          fill="rgba(0,0,0,.1)"
+          fill="rgba(0,0,0,.5)"
         />
         <rect
           id="svg_17"
@@ -67,7 +67,7 @@ export const ControllerIcon = () => {
           width="20"
           y="-1"
           x="112"
-          fill="rgba(0,0,0,.1)"
+          fill="rgba(0,0,0,.5)"
         />
         <rect id="svg_18" height="20" width="20" y="-1" x="30" fill="#A5F70F" />
         <rect
@@ -76,7 +76,7 @@ export const ControllerIcon = () => {
           width="20"
           y="-1"
           x="150"
-          fill="rgba(0,0,0,.1)"
+          fill="rgba(0,0,0,.5)"
         />
       </svg>
     </Controller>

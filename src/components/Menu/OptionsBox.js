@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import LinkTP from "../../img/CoverArt/linkTP.webp";
 import { motion } from "framer-motion";
-import { SideMenu } from "../../components/Menu/SideMenu";
+import { SideMenu } from "./MenuComponents/SideMenu";
 import { Link } from "react-router-dom";
 
 export const OptionsBox = () => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { faX } from "@fortawesome/free-solid-svg-icons";
@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 export const SideMenu = ({ close }) => {
+  const [OnText, setOnText] = useState("");
+  const [On, setOn] = useState("");
   return (
     <SideNav
       initial={{ opacity: 0 }}
@@ -63,11 +65,10 @@ export const SideMenu = ({ close }) => {
             repeat: Infinity,
           },
         }}
+        onClick={() => setOn(!On)}
       >
         Auto-brightness
-        <div onclick="Switch()" id="toggle" class="sidenav-toggle">
-          Off
-        </div>
+        <div>{On ? "Off" : "On"}</div>
       </AutoPlane>
       <BrightVol>
         <svg
@@ -92,7 +93,7 @@ export const SideMenu = ({ close }) => {
           id="brightness-range"
           min="10"
           max="100"
-          value="100"
+          defaultValue="100"
         />
       </BrightVol>
       <BrightVol>
@@ -124,7 +125,7 @@ export const SideMenu = ({ close }) => {
           id="brightness-range"
           min="10"
           max="100"
-          value="100"
+          defaultValue="100"
         />
       </BrightVol>
       <AutoPlane
@@ -136,11 +137,10 @@ export const SideMenu = ({ close }) => {
             repeat: Infinity,
           },
         }}
+        onClick={() => setOnText(!OnText)}
       >
         Airplane Mode
-        <div onclick="Switch2()" id="toggle2" class="sidenav-toggle">
-          Off
-        </div>
+        <div>{OnText ? "Off" : "On"}</div>
       </AutoPlane>
       <AirplaneText>
         <p>
@@ -193,6 +193,38 @@ export const SideMenu = ({ close }) => {
               d="m637,1144c-4,-4 -7,-29 -7,-55l0,-48l-52,-3l-53,-3l0,-40l0,-40l52,-3l52,-3l3,-52l3,-52l45,0l45,0l3,53l3,52l50,0l49,0l0,45l0,45l-49,0l-50,0l-3,53l-3,52l-40,3c-23,2 -44,0 -48,-4z"
             />
           </g>
+          <rect
+            id="svg_16"
+            height="20"
+            width="20"
+            y="-1"
+            x="72"
+            fill="rgba(255,255,255,.8)"
+          />
+          <rect
+            id="svg_17"
+            height="20"
+            width="20"
+            y="-1"
+            x="112"
+            fill="rgba(255,255,255,.8)"
+          />
+          <rect
+            id="svg_18"
+            height="20"
+            width="20"
+            y="-1"
+            x="30"
+            fill="#A5F70F"
+          />
+          <rect
+            id="svg_19"
+            height="20"
+            width="20"
+            y="-1"
+            x="150"
+            fill="rgba(255,255,255,.8)"
+          />
         </svg>
       </Controller>
     </SideNav>
