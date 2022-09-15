@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import "./icons.css";
 import LinkTP from "../../img/CoverArt/linkTP.webp";
-import ProfilePic from "../../img/CoverArt/profilepic.webp";
-import MK from "../../img/CoverArt/Library/MarioKart.webp";
+import ProfileContainer from "./ProfileContainer";
+import { PlayActivity } from "./PlayActivity";
+import { Link } from "react-router-dom";
+import { ContactUs } from "./AddFriend";
 
 export const ProfileBox = () => {
+  const [openProfile, setOpenProfile] = useState(false);
+  const [openPlayActive, setOpenPlayActive] = useState(false);
+  const [openAddFriend, setOpenAddFriend] = useState(false);
   return (
     <div>
       <div class="container">
@@ -22,7 +28,11 @@ export const ProfileBox = () => {
         </div>
       </div>
       <Showcase>
-        <ProfileBoxx>
+        <ProfileBoxx
+          initial={{ opacity: 0, translateY: -20 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          transition={{ duration: 1.8, delay: 0.5 }}
+        >
           <ProfileTitle>
             <ProfileImageContainer>
               <ProfileImage src={LinkTP} alt="Link from Twilight Princess" />
@@ -31,118 +41,44 @@ export const ProfileBox = () => {
           </ProfileTitle>
           <Profile>
             <TabsContainer>
-              <Tabs>
-                <h1>Profile</h1>
+              <Tabs
+                onClick={() => {
+                  setOpenProfile(true);
+                  setOpenAddFriend(false);
+                  setOpenPlayActive(false);
+                }}
+              >
+                <TabTextBorder>Profile</TabTextBorder>
+              </Tabs>
+              <Tabs
+                onClick={() => {
+                  setOpenPlayActive(true);
+                  setOpenProfile(false);
+                  setOpenAddFriend(false);
+                }}
+              >
+                <TabTextBorder>Play Activity</TabTextBorder>
+              </Tabs>
+              <Tabs
+                onClick={() => {
+                  setOpenAddFriend(true);
+                  setOpenPlayActive(false);
+                  setOpenProfile(false);
+                }}
+              >
+                <TabTextBorder>Add Friend</TabTextBorder>
               </Tabs>
               <Tabs>
-                <h1>Play Activity</h1>
-              </Tabs>
-              <Tabs>
-                <h1>Add Friend</h1>
+                <TabTextBorder>
+                  <Linkstyle to="/menu">Back to Main Menu</Linkstyle>
+                </TabTextBorder>
               </Tabs>
             </TabsContainer>
-            <ProfileContentContainer>
-              <MeContainer>
-                <MeImageContainer>
-                  <Images src={ProfilePic} alt="Myself" />
-                </MeImageContainer>
-                <AboutMeSection>
-                  <AboutName>
-                    <h1>Justin Lemos</h1>
-                  </AboutName>
-                  <AboutMe
-                    style={{
-                      borderTop: "1px solid rgba(255,255,255,.3)",
-                      borderBottom: "1px solid rgba(255,255,255,.3)",
-                    }}
-                  >
-                    <h1>About Me:</h1>
-                    <p>
-                      Hi, my name is Justin Lemos. I've been learning about
-                      front-end web development since late 2021. In that time,
-                      I've learned a lot about myself and what I wanna do as a
-                      career. I hope you'll continue through this site and get
-                      in touch with me!
-                      <br />I saw a set of images on Twitter about a year ago of
-                      this concept on{" "}
-                      <a
-                        href="https://twitter.com/KirbyKid__/status/1493290175618764804"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        this post.
-                      </a>{" "}
-                      Turns out it was a real mod for the Switch on{" "}
-                      <a href="https://themezer.net/packs/Lava-Lamp-Blue-373">
-                        themezer.net
-                      </a>{" "}
-                      that was from a mock-up from Reddit. Anyway, I felt
-                      inspired to try making this my first real big project, so
-                      I hope you enjoy!
-                    </p>
-                  </AboutMe>
-                  <AboutGame>
-                    <div class="game-img-container">
-                      <Images src={MK} alt="Mario Kart 8 Cover Art" />
-                    </div>
-                    <div class="online-container">
-                      <div class="online">
-                        <div class="green-square"></div>
-                        <h1>Online</h1>
-                      </div>
-                      <div>
-                        <h1 class="game-title">Mario Kart 8 Deluxe</h1>
-                      </div>
-                    </div>
-                  </AboutGame>
-                </AboutMeSection>
-              </MeContainer>
-              <div class="social-container">
-                <h1>Follow me on social media!</h1>
-                <div class="social-cards-container">
-                  <a
-                    href="https://twitter.com/Kagyu24"
-                    target="_blank"
-                    rel="noreferrer"
-                    class="social-card"
-                  >
-                    <i class="fa-brands fa-twitter"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/justinlemos24"
-                    target="_blank"
-                    rel="noreferrer"
-                    class="social-card"
-                  >
-                    <i class="fa-brands fa-linkedin"></i>
-                  </a>
-                  <a
-                    href="https://www.facebook.com/justin.lemos.9"
-                    target="_blank"
-                    rel="noreferrer"
-                    class="social-card"
-                  >
-                    <i class="fa-brands fa-square-facebook"></i>
-                  </a>
-                  <a
-                    href="https://www.justinlemos.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                    class="social-card"
-                  >
-                    <i class="fa-solid fa-j"></i>
-                  </a>
-                  <a
-                    href="https://github.com/Kagyu24"
-                    target="_blank"
-                    rel="noreferrer"
-                    class="social-card"
-                  >
-                    <i class="fa-brands fa-square-github"></i>
-                  </a>
-                </div>
-              </div>
-            </ProfileContentContainer>
+            <Container>
+              {openProfile && <ProfileContainer />}
+              {openPlayActive && <PlayActivity />}
+              {openAddFriend && <ContactUs />}
+            </Container>
           </Profile>
         </ProfileBoxx>
       </Showcase>
@@ -150,12 +86,18 @@ export const ProfileBox = () => {
   );
 };
 
+const Linkstyle = styled(Link)`
+  color: rgba(255, 255, 255, 0.7);
+`;
+
 const Showcase = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
 `;
 
 const ProfileBoxx = styled(motion.div)`
@@ -165,10 +107,6 @@ const ProfileBoxx = styled(motion.div)`
   border-radius: 40px;
   position: absolute;
   top: 5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 `;
 
@@ -244,57 +182,19 @@ const Tabs = styled(motion.div)`
   }
 `;
 
-const ProfileContentContainer = styled.div`
+const TabTextBorder = styled.h1`
+  &:hover {
+    &:before {
+      content: "";
+      border-left: 3px solid turquoise;
+      margin-left: -3%;
+      margin-right: 3%;
+    }
+  }
+`;
+
+const Container = styled.div`
   width: 75%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
-`;
-
-const MeContainer = styled.div`
-  width: 100%;
-  height: 70%;
-  display: flex;
-  padding-top: 50px;
-`;
-
-const MeImageContainer = styled.div`
-  width: 40%;
-  height: 80%;
-  padding-left: 50px;
-  display: block;
-`;
-const Images = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-`;
-
-const AboutMeSection = styled.div`
-  width: 75%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding-left: 30px;
-  padding-right: 30px;
-`;
-
-const AboutMe = styled.div`
-  width: 100%;
-  height: 33.33%;
-`;
-
-const AboutName = styled.div`
-  width: 100%;
-  height: 33.33%;
-`;
-
-const AboutGame = styled.div`
-  width: 100%;
-  height: 33.33%;
 `;

@@ -70,7 +70,7 @@ const float4 = {
 const Circle = styled(motion.div)`
   position: absolute;
   width: 25%;
-  height: 50%;
+  min-height: 50%;
   top: -150px;
   right: -150px;
   border-radius: 50%;
@@ -88,7 +88,7 @@ const Circle = styled(motion.div)`
 const Circle2 = styled(motion.div)`
    position: absolute;
   width: 25%;
-  height: 50%;
+  min-height: 50%;
   bottom: 300px;
   left: 1100px;
   border-radius: 50%;
@@ -105,7 +105,7 @@ const Circle2 = styled(motion.div)`
 const Circle3 = styled(motion.div)`
  position: absolute;
   width: 25%;
-  height: 50%;
+  min-height: 50%;
   bottom: 100px;
   right: -20px;
   border-radius: 50%;
@@ -122,7 +122,7 @@ const Circle3 = styled(motion.div)`
 const Circle4 = styled(motion.div)`
  position: absolute;
   width: 25%;
-  height: 50%;
+  min-height: 50%;
   top: -150px;
   right: 100px;
   border-radius: 50%;
@@ -139,7 +139,7 @@ const Circle4 = styled(motion.div)`
 const Circle5 = styled(motion.div)`
  position: absolute;
   width: 25%;
-  height: 50%;
+  min-height: 50%;
   top: 100px;
   right: -250px;
   border-radius: 50%;
@@ -155,7 +155,7 @@ const Circle5 = styled(motion.div)`
 const Circle6 = styled(motion.div)`
   position: absolute;
   width: 25%;
-  height: 50%;
+  min-height: 50%;
   left: -90px;
   bottom: -90px;
   border-radius: 50%;
@@ -172,7 +172,7 @@ const Circle6 = styled(motion.div)`
 const Circle7 = styled(motion.div)`
  position: absolute;
   width: 25%;
-  height: 50%;
+  min-height: 50%;
   left: 90px;
   bottom: 90px;
   border-radius: 50%;
@@ -189,7 +189,7 @@ const Circle7 = styled(motion.div)`
 const Circle8 = styled(motion.div)`
 position: absolute;
   width: 25%;
-  height: 50%;
+  min-height: 50%;
   left: -150px;
   bottom: 150px;
   border-radius: 50%;
@@ -206,7 +206,7 @@ position: absolute;
 const Circle9 = styled(motion.div)`
  position: absolute;
   width: 25%;
-  height: 50%;
+  min-height: 50%;
   left: 200px;
   bottom: -130px;
   border-radius: 50%;

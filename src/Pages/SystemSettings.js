@@ -3,7 +3,6 @@ import "./globalstyle.css";
 import { motion } from "framer-motion";
 import { SystemInfoMenu } from "../components/Menu/MenuSystemInfo";
 import { LibraryTitle } from "../components/GamesLibrary/LibraryTitle";
-import { LibraryBox } from "../components/GamesLibrary/LibraryBox";
 import { Circles } from "../components/Circles";
 import { SettingsBox } from "../components/SystemSettings.js/SettingsBox";
 

@@ -1,0 +1,22 @@
+.icons {
+  scale: 3;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.twitter {
+  scale: 3;
+  color: rgba(0, 0, 0, 0.7);
+  color: #1a8cd8;
+}
+
+.linkedin {
+  scale: 3;
+  color: rgba(0, 0, 0, 0.7);
+  color: #0a66c2;
+}
+
+.facebook {
+  scale: 3;
+  color: rgba(0, 0, 0, 0.7);
+  color: #1094f4;
+}
