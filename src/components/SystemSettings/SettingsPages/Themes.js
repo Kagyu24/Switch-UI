@@ -3,12 +3,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
-import "../checkmark.css"
+import "../checkmark.css";
 
 export const Themes = () => {
   return (
     <Container>
-      <ColorContainer>
+      <ColorContainer
+        whileHover={{
+          borderColor: ["#078fde", "#8bdefc", "#078fde"],
+          transition: {
+            duration: 1.1,
+            ease: "easeInOut",
+            repeat: Infinity,
+          },
+        }}
+      >
         <SquareSpace>
           <WhiteSquare></WhiteSquare>
           <h1>Basic White</h1>
@@ -17,7 +26,16 @@ export const Themes = () => {
           <FontAwesomeIcon className="checkmark" icon={faCircleCheck} />
         </div>
       </ColorContainer>
-      <ColorContainer>
+      <ColorContainer
+        whileHover={{
+          borderColor: ["#078fde", "#8bdefc", "#078fde"],
+          transition: {
+            duration: 1.1,
+            ease: "easeInOut",
+            repeat: Infinity,
+          },
+        }}
+      >
         <SquareSpace>
           <BlackSquare></BlackSquare>
           <h1>Basic Black</h1>
@@ -38,7 +56,7 @@ const Container = styled(motion.div)`
   align-items: center;
   padding: 1.5rem;
 `;
-const ColorContainer = styled.span`
+const ColorContainer = styled(motion.span)`
   width: 90%;
   border-top: 1px solid rgba(185, 190, 190, 0.4);
   border-bottom: 1px solid rgba(185, 190, 190, 0.4);
@@ -46,6 +64,12 @@ const ColorContainer = styled.span`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  &:hover {
+    border: 3px solid lightblue;
+    padding: 0.8rem;
+    color: turquoise;
+    cursor: pointer;
+  }
 `;
 
 const SquareSpace = styled.div`

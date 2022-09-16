@@ -6,11 +6,21 @@ import { SystemInfoMenu } from "../../components/SystemSettings/SettingsSystemIn
 import { Themes } from "./SettingsPages/Themes";
 import { Amiibo } from "./SettingsPages/amiibo";
 import { Bluetooth } from "./SettingsPages/Bluetooth";
+import { Notifications } from "./SettingsPages/Notifications";
+import { TVSettings } from "./SettingsPages/TVSettings";
+import { SleepMode } from "./SettingsPages/SleepMode";
+import { ScreenLock } from "./SettingsPages/ScreenLock";
+import { System } from "./SettingsPages/System";
 
 export const SettingsBox = () => {
   const [openThemes, setOpenThemes] = useState(false);
   const [openAmiibo, setOpenAmiibo] = useState(false);
   const [openBluetooth, setOpenBluetooth] = useState(false);
+  const [openNotifs, setOpenNotifs] = useState(false);
+  const [openTV, setOpenTV] = useState(false);
+  const [openSleep, setOpenSleep] = useState(false);
+  const [openLock, setOpenLock] = useState(false);
+  const [openSystem, setOpenSystem] = useState(false);
 
   return (
     <div>
@@ -61,6 +71,11 @@ export const SettingsBox = () => {
                   setOpenThemes(true);
                   setOpenAmiibo(false);
                   setOpenBluetooth(false);
+                  setOpenNotifs(false);
+                  setOpenTV(false);
+                  setOpenSleep(false);
+                  setOpenLock(false);
+                  setOpenSystem(false);
                 }}
                 whileHover={{
                   borderColor: ["#078fde", "#8bdefc", "#078fde"],
@@ -78,6 +93,11 @@ export const SettingsBox = () => {
                   setOpenAmiibo(true);
                   setOpenThemes(false);
                   setOpenBluetooth(false);
+                  setOpenNotifs(false);
+                  setOpenTV(false);
+                  setOpenSleep(false);
+                  setOpenLock(false);
+                  setOpenSystem(false);
                 }}
               >
                 <TabTextBorder>amiibo</TabTextBorder>
@@ -95,6 +115,11 @@ export const SettingsBox = () => {
                   setOpenBluetooth(true);
                   setOpenAmiibo(false);
                   setOpenThemes(false);
+                  setOpenNotifs(false);
+                  setOpenTV(false);
+                  setOpenSleep(false);
+                  setOpenLock(false);
+                  setOpenSystem(false);
                 }}
               >
                 <TabTextBorder>Bluetooth® Audio</TabTextBorder>
@@ -108,7 +133,16 @@ export const SettingsBox = () => {
                     repeat: Infinity,
                   },
                 }}
-                onClick={() => {}}
+                onClick={() => {
+                  setOpenNotifs(true);
+                  setOpenAmiibo(false);
+                  setOpenBluetooth(false);
+                  setOpenThemes(false);
+                  setOpenTV(false);
+                  setOpenSleep(false);
+                  setOpenLock(false);
+                  setOpenSystem(false);
+                }}
               >
                 <TabTextBorder>Notifications</TabTextBorder>
               </Tabs>
@@ -121,7 +155,16 @@ export const SettingsBox = () => {
                     repeat: Infinity,
                   },
                 }}
-                onClick={() => {}}
+                onClick={() => {
+                  setOpenTV(true);
+                  setOpenNotifs(false);
+                  setOpenAmiibo(false);
+                  setOpenBluetooth(false);
+                  setOpenThemes(false);
+                  setOpenSleep(false);
+                  setOpenLock(false);
+                  setOpenSystem(false);
+                }}
               >
                 <TabTextBorder>TV Settings</TabTextBorder>
               </Tabs>
@@ -134,7 +177,16 @@ export const SettingsBox = () => {
                     repeat: Infinity,
                   },
                 }}
-                onClick={() => {}}
+                onClick={() => {
+                  setOpenSleep(true);
+                  setOpenTV(false);
+                  setOpenNotifs(false);
+                  setOpenAmiibo(false);
+                  setOpenBluetooth(false);
+                  setOpenThemes(false);
+                  setOpenLock(false);
+                  setOpenSystem(false);
+                }}
               >
                 <TabTextBorder>Sleep Mode</TabTextBorder>
               </Tabs>
@@ -147,7 +199,16 @@ export const SettingsBox = () => {
                     repeat: Infinity,
                   },
                 }}
-                onClick={() => {}}
+                onClick={() => {
+                  setOpenLock(true);
+                  setOpenSleep(false);
+                  setOpenTV(false);
+                  setOpenNotifs(false);
+                  setOpenAmiibo(false);
+                  setOpenBluetooth(false);
+                  setOpenThemes(false);
+                  setOpenSystem(false);
+                }}
               >
                 <TabTextBorder>Screen Lock</TabTextBorder>
               </Tabs>
@@ -160,7 +221,16 @@ export const SettingsBox = () => {
                     repeat: Infinity,
                   },
                 }}
-                onClick={() => {}}
+                onClick={() => {
+                  setOpenSystem(true);
+                  setOpenLock(false);
+                  setOpenSleep(false);
+                  setOpenTV(false);
+                  setOpenNotifs(false);
+                  setOpenAmiibo(false);
+                  setOpenBluetooth(false);
+                  setOpenThemes(false);
+                }}
               >
                 <TabTextBorder>System</TabTextBorder>
               </Tabs>
@@ -183,6 +253,11 @@ export const SettingsBox = () => {
               {openThemes && <Themes />}
               {openAmiibo && <Amiibo />}
               {openBluetooth && <Bluetooth />}
+              {openNotifs && <Notifications />}
+              {openTV && <TVSettings />}
+              {openSleep && <SleepMode />}
+              {openLock && <ScreenLock />}
+              {openSystem && <System />}
             </Container>
           </Profile>
         </SettingBox>
