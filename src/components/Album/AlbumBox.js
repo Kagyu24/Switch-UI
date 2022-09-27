@@ -514,19 +514,3 @@ const CoverArt = styled.img`
   object-fit: cover;
   border-radius: 25px;
 `;
-const GameTitle = styled.div`
-  width: auto;
-  text-align: center;
-`;
-const GameTitleh1 = styled(motion.h1)`
-  color: #fff;
-  font-size: 1.5em;
-  font-weight: 600;
-  margin-top: 10px;
-  white-space: nowrap;
-  text-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
-  visibility: hidden;
-  ${GameCard}:hover & {
-    visibility: visible;
-  }
-`;
