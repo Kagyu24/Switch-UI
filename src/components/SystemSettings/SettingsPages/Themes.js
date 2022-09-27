@@ -22,9 +22,7 @@ export const Themes = () => {
           <WhiteSquare></WhiteSquare>
           <h1>Basic White</h1>
         </SquareSpace>
-        <div>
-          <FontAwesomeIcon className="checkmark" icon={faCircleCheck} />
-        </div>
+        <div></div>
       </ColorContainer>
       <ColorContainer
         whileHover={{

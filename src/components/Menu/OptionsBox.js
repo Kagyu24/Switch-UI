@@ -4,19 +4,22 @@ import LinkTP from "../../img/CoverArt/linkTP.webp";
 import { motion } from "framer-motion";
 import { SideMenu } from "./MenuComponents/SideMenu";
 import { Link } from "react-router-dom";
+import { ControllerModal } from "../Modals/ControllerModal";
 
 export const OptionsBox = () => {
   const [openSideMenu, setSideMenu] = useState(false);
+  const [openControllers, setOpenControllers] = useState(false);
+
   return (
     <Showcase>
       {openSideMenu && <SideMenu close={setSideMenu} />}
+      {openControllers && <ControllerModal close={setOpenControllers} />}
       <OptionsContainer
         initial={{ opacity: 0, translateY: -20 }}
         animate={{ opacity: 1, translateY: 0 }}
         transition={{ duration: 1.8, delay: 0.5 }}
       >
         <OptionBubble
-          to="/profile"
           whileHover={{
             borderColor: ["#078fde", "#8bdefc", "#078fde"],
             transition: {
@@ -26,13 +29,15 @@ export const OptionsBox = () => {
             },
           }}
         >
-          <ProfileImgContainer>
-            <ProfileImg
-              src={LinkTP}
-              alt="Profile/ Link Legend of Zelda Twilight Princess"
-              draggable="false"
-            />
-          </ProfileImgContainer>
+          <Link to="/profile">
+            <ProfileImgContainer>
+              <ProfileImg
+                src={LinkTP}
+                alt="Link Legend of Zelda Twilight Princess"
+                draggable="false"
+              />
+            </ProfileImgContainer>
+          </Link>
           <div>
             <OptionTitle>&nbsp;&nbsp;Kagyu's Page</OptionTitle>
           </div>
@@ -105,7 +110,6 @@ export const OptionsBox = () => {
           </div>
         </OptionBubble>
         <OptionBubble
-          to="/menu"
           whileHover={{
             borderColor: ["#078fde", "#8bdefc", "#078fde"],
             transition: {
@@ -115,26 +119,28 @@ export const OptionsBox = () => {
             },
           }}
         >
-          <GalleryContainer style={{ background: "#5acdff" }}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="White"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-              <line x1="4" y1="16" x2="20" y2="16"></line>
-              <path d="M4 12l3 -3c.928 -.893 2.072 -.893 3 0l4 4"></path>
-              <path d="M13 12l2 -2c.928 -.893 2.072 -.893 3 0l2 2"></path>
-              <line x1="14" y1="7" x2="14.01" y2="7"></line>
-            </svg>
-          </GalleryContainer>
+          <Link to="/album">
+            <GalleryContainer style={{ background: "#5acdff" }}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="White"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                <line x1="4" y1="16" x2="20" y2="16"></line>
+                <path d="M4 12l3 -3c.928 -.893 2.072 -.893 3 0l4 4"></path>
+                <path d="M13 12l2 -2c.928 -.893 2.072 -.893 3 0l2 2"></path>
+                <line x1="14" y1="7" x2="14.01" y2="7"></line>
+              </svg>
+            </GalleryContainer>
+          </Link>
           <div>
             <OptionTitle>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Album</OptionTitle>
           </div>
@@ -148,6 +154,9 @@ export const OptionsBox = () => {
               ease: "easeInOut",
               repeat: Infinity,
             },
+          }}
+          onClick={() => {
+            setOpenControllers(true);
           }}
         >
           <OptionContainer>
@@ -292,22 +301,22 @@ const Showcase = styled.div`
 
 const OptionsContainer = styled(motion.div)`
   background-color: rgba(255, 255, 255, 0.3);
-  width: 48%;
-  height: 12%;
+  width: 55rem;
+  height: 7rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  bottom: 10%;
-  left: 27%;
+  bottom: 7rem;
+  left: 35rem;
   border-radius: 100px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   padding-left: 10px;
   padding-right: 10px;
 `;
 
-const OptionBubble = styled(Link)`
+const OptionBubble = styled(motion.a)`
   width: 10%;
   height: 80%;
   position: relative;

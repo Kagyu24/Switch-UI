@@ -236,7 +236,7 @@ const SocialContainer = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  margin-top: -8%;
+  margin-top: -5rem;
   gap: 2rem;
 `;
 
@@ -251,8 +251,8 @@ const SocialCardContainer = styled.div`
 `;
 
 const SocialCard = styled(motion.a)`
-  width: 15%;
-  height: 115%;
+  width: 12rem;
+  height: 12rem;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -218,14 +218,14 @@ const Showcase = styled.div`
 
 const Menubox = styled(motion.div)`
   background-color: rgba(255, 255, 255, 0.3);
-  width: 83%;
-  height: 43%;
+  width: 100rem;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 20%;
-  left: 8%;
+  top: 14rem;
+  left: 9rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   border-radius: 40px;
   padding: 15px;

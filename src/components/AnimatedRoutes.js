@@ -6,6 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import GamesLibrary from "../Pages/GamesLibrary";
 import SystemSettings from "../Pages/SystemSettings";
 import { ProfilePage } from "../Pages/ProfilePage";
+import { Album } from "../Pages/Album";
 
 export const AnimatedRoutes = () => {
   const location = useLocation();
@@ -17,6 +18,7 @@ export const AnimatedRoutes = () => {
         <Route path="/gamelibrary" element={<GamesLibrary />} />
         <Route path="/settings" element={<SystemSettings />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/album" element={<Album />} />
       </Routes>
     </AnimatePresence>
   );

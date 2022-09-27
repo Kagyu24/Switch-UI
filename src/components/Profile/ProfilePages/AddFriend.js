@@ -39,7 +39,12 @@ export const ContactUs = () => {
         <p>
           If you liked this app, feel free to email me below or you can also
           email me on my portfolio site at{" "}
-          <a style={{ color: "#537dac" }} href="justinlemos.com">
+          <a
+            style={{ color: "#537dac" }}
+            href="https://www.justinlemos.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             justinlemos.com
           </a>
         </p>
